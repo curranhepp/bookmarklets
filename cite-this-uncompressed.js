@@ -20,8 +20,16 @@
         c = a.getFullYear(),
         ct = '<textarea id="citationclip" style="background: #FFF;border: none;font-size: 10px;border-left: 3px solid #5677fc;}">"' + t.innerHTML + '." Last modified ' + o + ". " + u + " (accessed " + l + "/" + f + "/" + c + ").</textarea>";
 
+    function citeGrabber() {
+        var $test = document.getElementById("citationclip");
+        $test.select();
+        // log for debugging
+        console.info($test.value);
+    }
+
     n += '</ul>';
     n += ct;
     document.body.insertBefore(e, document.body.firstChild);
     e.innerHTML = '<div id="citewrapper" style="border:0;border-radius:0px;box-shadow:0 5px 10px rgba(0,0,0,0.4);background:#FAFAFA; text-align:left; margin: 0 12px; padding: 0 5px; border-bottom: 1px solid gray; color: #000; position:fixed; left:0;right:0;"><a style="background:#EFEFEF!important;display: block;text-align: center;position: relative; line-height: 29px; height: 29px;" href="#" onclick="document.body.removeChild(document.body.firstChild);return false">remove</a>' + n + "</div>";
+    citeGrabber();
 })();
