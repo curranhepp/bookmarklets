@@ -3,7 +3,7 @@ javascript: (function() {
         e.setAttribute("id", "citationbox");
         e.setAttribute("style", "font-size:12px; background: #FAFAFA; padding: 0 12px; z-index: 5500003 !important; position: fixed;");
     var t = document.getElementsByTagName("title")[0];
-    var n = "<p><strong>Title(" + t.innerHTML.length + "):</strong> " + t.innerHTML + "</p><ul style=\"list-style-type: none;\">";
+    var n = "<p><strong>Title:</strong> " + t.innerHTML + "</p><ul style=\"list-style-type: none;\">";
     var r = document.getElementsByTagName("meta");
     for (var i = 0; i < r.length; i++) {
         if (null !== r[i].getAttribute("name")) {
