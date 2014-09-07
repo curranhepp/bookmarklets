@@ -1,21 +1,28 @@
-javascript: (function () {
-  var h = document.createElement('div');
-  var t = document.getElementsByTagName('title')[0];
-  var info = '<p><strong>Title(' + t.innerHTML.length + '):</strong> ' + t.innerHTML + '</p>';
-  var m = document.getElementsByTagName('meta');
-  for (var i = 0; i < m.length; i++) {
-    if (null !== m[i].getAttribute('name')) {
-      var c = m[i].getAttribute('content');
-      info += '<p><strong>' + m[i].getAttribute('name') + '(' + c.length + '):</strong> ' + c + '</p>';
+javascript: (function() {
+    var e = document.createElement("div");
+        e.setAttribute("id", "citationbox");
+        e.setAttribute("style", "font-size:12px; background: #FAFAFA; padding: 0 12px; z-index: 5500003 !important; position: fixed;");
+    var t = document.getElementsByTagName("title")[0];
+    var n = "<p><strong>Title(" + t.innerHTML.length + "):</strong> " + t.innerHTML + "</p><ul style=\"list-style-type: none;\">";
+    var r = document.getElementsByTagName("meta");
+    for (var i = 0; i < r.length; i++) {
+        if (null !== r[i].getAttribute("name")) {
+            var s = r[i].getAttribute("content");
+            n += "<li><strong>" + r[i].getAttribute("name") + ":</strong> " + s + "</li>";
+        }
     }
-  }
-  var lm = document.lastModified;
-  var url = location.href;
-  var d = new Date();
-  var dd = d.getDate();
-  var mm = d.getMonth()+1;
-  var yyyy = d.getFullYear();      
-  info += '<p><strong>Citation: </strong>"' + t.innerHTML + '." Last modified ' + lm + '. ' + url + ' (accessed ' + mm + '/' + dd + '/' + yyyy + ').</p>';
-  document.body.insertBefore(h, document.body.firstChild);
-  h.innerHTML = '<div style="border:1px solid #888;border-radius:5px;-moz-box-shadow:0 0 5px #888;-webkit-box-shadow:0 0 5px#888;box-shadow:0 0 5px #888;background:#eee;text-align:left;padding:1em;"><a href="#" onclick="document.body.removeChild(document.body.firstChild);return false">remove</a>' + info + '</div>';
+
+    var o = document.lastModified;
+    var u = location.href;
+    var a = new Date();
+    var f = a.getDate();
+    var l = a.getMonth() + 1;
+    var c = a.getFullYear();
+    var ct = '<p id="citationclip"><strong>Citation: </strong>"' + t.innerHTML + '." Last modified ' + o + ". " + u + " (accessed " + l + "/" + f + "/" + c + ").</p>";
+
+    n += '</ul>';
+    n += ct;
+    document.body.insertBefore(e, document.body.firstChild);
+    e.innerHTML = '<div id="citewrapper" style="border:0;border-radius:0px;-moz-box-shadow:0 0 5px #888;-webkit-box-shadow:0 0 5px#888;box-shadow:0 0 5px #888;background:#FAFAFA; text-align:left; margin: 0 12px; padding: 0 5px; border-bottom: 1px solid gray; color: #000; position:fixed; left:0;right:0;"><a style="background:#EFEFEF!important; color: #333333; border-left: 3px solid #5677fc; display: block;text-align: center;position: relative; letter-spacing: -1px; line-height: 29px; height: 29px;" href="#" onclick="document.body.removeChild(document.body.firstChild);return false">remove</a>' + n + "</div>";
+
 })();
