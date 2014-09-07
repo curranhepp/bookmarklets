@@ -18,10 +18,10 @@
         f = a.getDate(),
         l = a.getMonth() + 1,
         c = a.getFullYear(),
-        ct = '<p id="citationclip"><strong>Citation: </strong>"' + t.innerHTML + '." Last modified ' + o + ". " + u + " (accessed " + l + "/" + f + "/" + c + ").</p>";
+        ct = '<textarea id="citationclip" style="background: #FFF;border: none;font-size: 10px;border-left: 3px solid #5677fc;}">"' + t.innerHTML + '." Last modified ' + o + ". " + u + " (accessed " + l + "/" + f + "/" + c + ").</textarea>";
 
     n += '</ul>';
     n += ct;
     document.body.insertBefore(e, document.body.firstChild);
-    e.innerHTML = '<div id="citewrapper" style="border:0;border-radius:0px;-moz-box-shadow:0 0 5px #888;-webkit-box-shadow:0 0 5px#888;box-shadow:0 0 5px #888;background:#FAFAFA; text-align:left; margin: 0 12px; padding: 0 5px; border-bottom: 1px solid gray; color: #000; position:fixed; left:0;right:0;"><a style="background:#EFEFEF!important; color: #333333; border-left: 3px solid #5677fc; display: block;text-align: center;position: relative; letter-spacing: -1px; line-height: 29px; height: 29px;" href="#" onclick="document.body.removeChild(document.body.firstChild);return false">remove</a>' + n + "</div>";
+    e.innerHTML = '<div id="citewrapper" style="border:0;border-radius:0px;box-shadow:0 5px 10px rgba(0,0,0,0.4);background:#FAFAFA; text-align:left; margin: 0 12px; padding: 0 5px; border-bottom: 1px solid gray; color: #000; position:fixed; left:0;right:0;"><a style="background:#EFEFEF!important;display: block;text-align: center;position: relative; line-height: 29px; height: 29px;" href="#" onclick="document.body.removeChild(document.body.firstChild);return false">remove</a>' + n + "</div>";
 }();
