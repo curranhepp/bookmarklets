@@ -12,6 +12,21 @@ javascript: (function() {
         }
     }
 
+    function copyTextToClipboard(citeText) {
+        var $citeText = citeText.replace(/(<([^>]+)>)/ig,"");
+
+//       var copyFrom = document.createElement("textarea");
+//       copyFrom.textContent = $citeText;
+      var copyFrom = document.getElementById("citewrapper").textContent;
+//       body.appendChild(copyFrom);
+//       copyFrom.select();
+      document.execCommand(copyTextToClipboard);
+//       body.removeChild(copyFrom);
+//       return false;
+console.log("Citation: " + $citeText + " copied to clipboard");
+sessionStorage.setItem("Citation",$citeText);
+    };
+
     var o = document.lastModified;
     var u = location.href;
     var a = new Date();
@@ -24,5 +39,6 @@ javascript: (function() {
     n += ct;
     document.body.insertBefore(e, document.body.firstChild);
     e.innerHTML = '<div id="citewrapper" style="border:0;border-radius:0px;-moz-box-shadow:0 0 5px #888;-webkit-box-shadow:0 0 5px#888;box-shadow:0 0 5px #888;background:#FAFAFA; text-align:left; margin: 0 12px; padding: 0 5px; border-bottom: 1px solid gray; color: #000; position:fixed; left:0;right:0;"><a style="background:#EFEFEF!important; color: #333333; border-left: 3px solid #5677fc; display: block;text-align: center;position: relative; letter-spacing: -1px; line-height: 29px; height: 29px;" href="#" onclick="document.body.removeChild(document.body.firstChild);return false">remove</a>' + n + "</div>";
-
+    var p = document.getElementById("citationclip");
+    p.onclick = copyTextToClipboard(ct);
 })();
