@@ -1,0 +1,1 @@
+javascript:d=document,e=encodeURIComponent;d.location.href='codebox://add-snippet?name='+e(d.title)+'&src='+e(d.location.href)+'&content='+e(''+document.getSelection());
