@@ -1,0 +1,7 @@
+javascript: (function(){
+    var wMobile = "https://en.m.wikipedia.org";
+    var wPage = document.location.pathname;
+    var wUrl = wMobile + wPage;
+    wUrl = wUrl.replace(/(<([^>]+)>)/ig,"");
+    window.location.replace(wUrl);
+})();
