@@ -14,3 +14,6 @@ Pocket offers Chrome extensions to add the page your are viewing to your Pocket 
 
 #### Cached Version
 Retrieves the Google cached version of a webpage. Useful when sites require subscriptions to view content articles or when content from a page was removed.
+
+#### Wikipedia Mobile View
+Shows the Wikipedia page you are viewing in mobile view format. Makes reading and navigating more pleasant. The view is set as if you were on a mobile device.
